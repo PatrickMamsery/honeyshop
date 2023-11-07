@@ -4,24 +4,27 @@ import 'package:get/get.dart';
 import '../account/widgets/profile.dart';
 
 class AccountPage extends GetView<HomeController> {
+  const AccountPage({super.key});
+
   @override
   Widget build(BuildContext context) {
-    var sizedBox = SizedBox(
+    var sizedBox = const SizedBox(
       height: 20,
     );
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: Color.fromARGB(230, 231, 176, 11),
+          backgroundColor: const Color.fromARGB(230, 231, 176, 11),
           leading: IconButton(
-              onPressed: () => Get.back(), icon: Icon(Icons.arrow_back)),
-          title: Center(child: Text('Edit Profile')),
-          actions: [
+              onPressed: () => Get.back(), icon: const Icon(Icons.arrow_back)),
+          title: const Center(child: Text('Edit Profile')),
+          actions: const [
             Padding(
-              padding: const EdgeInsets.only(top: 20.0, right: 8.0),
+              padding: EdgeInsets.only(top: 20.0, right: 8.0),
               child: Text("SAVE"),
             )
           ],
           bottom: PreferredSize(
+              preferredSize: const Size.fromHeight(225),
               child: Padding(
                 padding: const EdgeInsets.only(bottom: 60),
                 child: Stack(
@@ -38,10 +41,10 @@ class AccountPage extends GetView<HomeController> {
                         bottom: 5,
                         right: 0,
                         child: Container(
-                          padding: EdgeInsets.all(8),
-                          decoration: BoxDecoration(
+                          padding: const EdgeInsets.all(8),
+                          decoration: const BoxDecoration(
                               shape: BoxShape.circle, color: Colors.white),
-                          child: Icon(
+                          child: const Icon(
                             Icons.camera_alt_rounded,
                             size: 28,
                             color: Colors.amber,
@@ -49,8 +52,7 @@ class AccountPage extends GetView<HomeController> {
                         ))
                   ],
                 ),
-              ),
-              preferredSize: Size.fromHeight(225)),
+              )),
         ),
         body: SafeArea(
             bottom: false,
@@ -61,15 +63,15 @@ class AccountPage extends GetView<HomeController> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      profile(title: "UserName", subtitle: "Helena Ndiruka"),
+                      const profile(title: "UserName", subtitle: "Helena Ndiruka"),
                       sizedBox,
-                      profile(title: "Email", subtitle: "hellena@gmail.com"),
+                      const profile(title: "Email", subtitle: "hellena@gmail.com"),
                       sizedBox,
-                      profile(title: "Phone", subtitle: "0679316321"),
+                      const profile(title: "Phone", subtitle: "0679316321"),
                       sizedBox,
-                      profile(title: "Gender", subtitle: "Female"),
+                      const profile(title: "Gender", subtitle: "Female"),
                       sizedBox,
-                      profile(title: "Date of birth", subtitle: "04/05/2020")
+                      const profile(title: "Date of birth", subtitle: "04/05/2020")
                     ],
                   ),
                 ),

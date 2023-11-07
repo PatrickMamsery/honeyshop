@@ -4,7 +4,7 @@ class Description extends StatelessWidget {
   final String title1;
   final String subtitle1;
 
-  Description({
+  const Description({
     super.key,
     required this.sizedBox,
     required this.title1,
@@ -23,12 +23,12 @@ class Description extends StatelessWidget {
           children: [
             Text(
               title1,
-              style: TextStyle(fontWeight: FontWeight.bold),
+              style: const TextStyle(fontWeight: FontWeight.bold),
             ),
             sizedBox,
             Text(
               subtitle1,
-              style: TextStyle(color: Colors.grey),
+              style: const TextStyle(color: Colors.grey),
             )
           ],
         ),

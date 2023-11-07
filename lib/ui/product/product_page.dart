@@ -4,34 +4,38 @@ import '../product/widgets/description.dart';
 import '../../controllers/product_controller.dart';
 import '../product/widgets/description2.dart';
 
+// ignore: must_be_immutable
 class ProductPage extends GetView<ProductController> {
+  @override
   ProductController controller = Get.put(ProductController());
+
+  ProductPage({super.key});
   @override
   Widget build(BuildContext context) {
-    var sizedBox = SizedBox(
+    var sizedBox = const SizedBox(
       height: 20,
     );
     return Scaffold(
       appBar: AppBar(
         // backgroundColor: Color.fromARGB(255, 209, 167, 41),
         leading: IconButton(
-          icon: Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back),
           onPressed: () => Get.back(),
         ),
-        actions: [Icon(Icons.favorite)],
+        actions: const [Icon(Icons.favorite)],
         flexibleSpace: ClipRRect(
-          borderRadius: BorderRadius.only(
+          borderRadius: const BorderRadius.only(
               bottomLeft: Radius.circular(30),
               bottomRight: Radius.circular(30)),
           child: Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               gradient: RadialGradient(
                 focalRadius:
                     0.2, // Adjust this value to control the intensity of the effect
                 radius: 2,
                 colors: [
-                  const Color.fromARGB(255, 236, 235, 232),
-                  const Color.fromARGB(255, 231, 176, 11), // Darker amber color
+                  Color.fromARGB(255, 236, 235, 232),
+                  Color.fromARGB(255, 231, 176, 11), // Darker amber color
                   Color.fromARGB(230, 231, 176, 11), // Darker amber color
                 ],
                 stops: [
@@ -44,19 +48,19 @@ class ProductPage extends GetView<ProductController> {
           ),
         ),
 
-        shape: RoundedRectangleBorder(
+        shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.only(
                 bottomLeft: Radius.circular(30),
                 bottomRight: Radius.circular(30))),
         bottom: PreferredSize(
+            preferredSize: const Size.fromHeight(250),
             child: Padding(
               padding: const EdgeInsets.only(bottom: 75),
               child: Image.asset(
                 "assets/honey-cider.png",
                 height: 200,
               ),
-            ),
-            preferredSize: Size.fromHeight(250)),
+            )),
       ),
       body: SafeArea(
         bottom: false,
@@ -67,7 +71,7 @@ class ProductPage extends GetView<ProductController> {
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
               Text(
                 controller.product.value.title!,
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18.0),
+                style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 18.0),
               ),
               sizedBox,
               Row(
@@ -83,11 +87,11 @@ class ProductPage extends GetView<ProductController> {
                         ),
                         child: Text(
                           controller.product.value.price!.toString(),
-                          style: TextStyle(fontSize: 16),
+                          style: const TextStyle(fontSize: 16),
                         ),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.only(bottom: 6.0),
+                      const Padding(
+                        padding: EdgeInsets.only(bottom: 6.0),
                         child: Text(
                           "210l",
                           style: TextStyle(fontSize: 10, color: Colors.grey),
@@ -101,9 +105,9 @@ class ProductPage extends GetView<ProductController> {
                           height: 20,
                           alignment: Alignment.center,
                           decoration: BoxDecoration(
-                              color: Color.fromARGB(230, 231, 176, 11),
+                              color: const Color.fromARGB(230, 231, 176, 11),
                               borderRadius: BorderRadius.circular(5)),
-                          child: Text("26% off"),
+                          child: const Text("26% off"),
                         ),
                       )
                     ],
@@ -128,7 +132,7 @@ class ProductPage extends GetView<ProductController> {
                           child: GetX<ProductController>(
                             builder: (ctl) => Text(
                               ctl.count.value.toString(),
-                              style: TextStyle(fontSize: 15),
+                              style: const TextStyle(fontSize: 15),
                             ),
                           )),
                       Padding(
@@ -147,8 +151,8 @@ class ProductPage extends GetView<ProductController> {
                 ],
               ),
               sizedBox,
-              Padding(
-                padding: const EdgeInsets.only(bottom: 8.0),
+              const Padding(
+                padding: EdgeInsets.only(bottom: 8.0),
                 child: Text(
                   "Descrilption",
                   style: TextStyle(fontWeight: FontWeight.bold),
@@ -202,8 +206,8 @@ class ProductPage extends GetView<ProductController> {
                       style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.amber),
                       onPressed: () => controller.display(),
-                      child: Padding(
-                        padding: const EdgeInsets.only(
+                      child: const Padding(
+                        padding: EdgeInsets.only(
                             top: 15, bottom: 15, left: 40, right: 40),
                         child: Text(
                           "Order",

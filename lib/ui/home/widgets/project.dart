@@ -8,7 +8,7 @@ class Project extends StatelessWidget {
   final String subtitle;
   final String trailing;
   final int id;
-  Project(
+  const Project(
       {super.key,
       required this.url,
       required this.title,
@@ -43,7 +43,7 @@ class Project extends StatelessWidget {
                 padding: const EdgeInsets.all(8.0),
                 child: Text(
                   title,
-                  style: TextStyle(fontWeight: FontWeight.bold),
+                  style: const TextStyle(fontWeight: FontWeight.bold),
                 ),
               ),
               Row(
@@ -54,7 +54,7 @@ class Project extends StatelessWidget {
                         bottom: 8.0, left: 8.0, right: 8.0),
                     child: Text(
                       subtitle,
-                      style: TextStyle(
+                      style: const TextStyle(
                           color: Colors.amber, fontWeight: FontWeight.bold),
                     ),
                   ),
@@ -62,7 +62,7 @@ class Project extends StatelessWidget {
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
                       trailing,
-                      style: TextStyle(
+                      style: const TextStyle(
                           color: Colors.lightGreenAccent,
                           fontWeight: FontWeight.bold),
                     ),

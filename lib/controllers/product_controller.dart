@@ -1,7 +1,6 @@
 import 'package:first_app/data/models/product_response.dart';
 // import 'package:first_app/data/models/projects_response.dart';
 import 'package:first_app/data/repositories/product_repository.dart';
-import 'package:first_app/data/services/api_client.dart';
 import '../data/models/order_response.dart';
 // import 'package:first_app/data/repositories/projects_repository.dart';
 import 'package:get/get.dart';
@@ -17,6 +16,7 @@ class ProductController extends GetxController {
   var name = TextEditingController();
   final _repo = ProjectRepository();
 
+  @override
   void onInit() {
     _repo.getProject(
         beforeSend: () {},
@@ -64,7 +64,7 @@ class ProductController extends GetxController {
 
   void display() {
     Get.bottomSheet(
-        Container(
+        SizedBox(
           // decoration: BoxDecoration(
           //   borderRadius: BorderRadius.vertical(
           //     top: Radius.circular(50.0),
@@ -79,7 +79,7 @@ class ProductController extends GetxController {
                     padding: const EdgeInsets.all(8.0),
                     child: Column(
                       children: [
-                        Center(
+                        const Center(
                             child: Text(
                           "Order Now",
                           style: TextStyle(
@@ -97,8 +97,8 @@ class ProductController extends GetxController {
                                 // crossAxisSpacing: 5.0,
                                 childAspectRatio: 2.0,
                                 children: [
-                                  Padding(
-                                    padding: const EdgeInsets.only(top: 20.0),
+                                  const Padding(
+                                    padding: EdgeInsets.only(top: 20.0),
                                     child: Text("Name:"),
                                   ),
                                   TextFormField(
@@ -117,13 +117,13 @@ class ProductController extends GetxController {
                                       return null;
                                     },
                                   ),
-                                  Text("Project:"),
+                                  const Text("Project:"),
                                   Text(product.value.title!),
-                                  Text("Quantity:"),
+                                  const Text("Quantity:"),
                                   Text(
                                     count.value.toString(),
                                   ),
-                                  Text("Total:"),
+                                  const Text("Total:"),
                                   Text((count.value * product.value.price!)
                                       .toString())
                                 ],
@@ -139,8 +139,8 @@ class ProductController extends GetxController {
                                       if (_formKey.currentState!.validate())
                                         {submit()},
                                     },
-                                child: Padding(
-                                  padding: const EdgeInsets.only(
+                                child: const Padding(
+                                  padding: EdgeInsets.only(
                                       top: 15, bottom: 15, left: 40, right: 40),
                                   child: Text(
                                     "Confirm",
@@ -153,7 +153,7 @@ class ProductController extends GetxController {
           ),
         ),
         backgroundColor: Colors.white,
-        shape: RoundedRectangleBorder(
+        shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.vertical(
             top: Radius.circular(16.0),
           ),

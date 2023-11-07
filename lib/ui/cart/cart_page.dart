@@ -4,29 +4,32 @@ import '../../controllers/cart_controller.dart';
 import '../cart/widgets/item.dart';
 
 class CartPage extends GetView<CartController> {
+  const CartPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: Color.fromARGB(230, 231, 176, 11),
-          title: Center(child: Text('My Cart')),
+          backgroundColor: const Color.fromARGB(230, 231, 176, 11),
+          title: const Center(child: Text('My Cart')),
           leading: IconButton(
-              onPressed: () => Get.back(), icon: Icon(Icons.arrow_back)),
-          actions: [
+              onPressed: () => Get.back(), icon: const Icon(Icons.arrow_back)),
+          actions: const [
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: EdgeInsets.all(8.0),
               child: Icon(Icons.delete),
             )
           ],
-          bottom: PreferredSize(
-              child: Column(), preferredSize: Size.fromHeight(50)),
+          bottom: const PreferredSize(
+              preferredSize: Size.fromHeight(50),
+              child: Column()),
         ),
         body: SafeArea(
           child: Container(
             child: Stack(
               children: [
                 ListView(
-                  children: [
+                  children: const [
                     Item(
                         url: "assets/honey-gel.jpg",
                         title: "honey",
@@ -44,7 +47,7 @@ class CartPage extends GetView<CartController> {
                         title: "honey",
                         price: "24000"),
                     Padding(
-                      padding: const EdgeInsets.only(left: 30.0, right: 30.0),
+                      padding: EdgeInsets.only(left: 30.0, right: 30.0),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -89,7 +92,7 @@ class CartPage extends GetView<CartController> {
                   right: 0,
                   child: Container(
                     height: 50,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                         borderRadius: BorderRadius.only(
                             topLeft: Radius.circular(30.0),
                             topRight: Radius.circular(30.0)),
@@ -100,7 +103,7 @@ class CartPage extends GetView<CartController> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text(
+                          const Text(
                             "1290.00l",
                             style: TextStyle(
                                 fontWeight: FontWeight.bold, fontSize: 20),
@@ -110,9 +113,9 @@ class CartPage extends GetView<CartController> {
                             height: 30,
                             alignment: Alignment.center,
                             decoration: BoxDecoration(
-                                color: Color.fromARGB(230, 231, 176, 11),
+                                color: const Color.fromARGB(230, 231, 176, 11),
                                 borderRadius: BorderRadius.circular(10)),
-                            child: Text("checkout"),
+                            child: const Text("checkout"),
                           ),
                         ],
                       ),

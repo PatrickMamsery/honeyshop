@@ -6,7 +6,7 @@ class Category extends StatelessWidget {
   final String title;
   final String description;
 
-  Category(
+  const Category(
       {super.key,
       required this.sizedBox,
       required this.url,
@@ -18,7 +18,7 @@ class Category extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () => Get.bottomSheet(
-          Container(
+          SizedBox(
             height: 500,
             child: Column(
               children: [
@@ -39,7 +39,7 @@ class Category extends StatelessWidget {
                           alignment: Alignment.center,
                           child: Text(
                             title,
-                            style: TextStyle(
+                            style: const TextStyle(
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold,
                                 fontSize: 22.0),
@@ -53,7 +53,7 @@ class Category extends StatelessWidget {
             ),
           ),
           backgroundColor: Colors.white,
-          shape: RoundedRectangleBorder(
+          shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.vertical(
               top: Radius.circular(16.0),
             ),
@@ -63,7 +63,7 @@ class Category extends StatelessWidget {
         child: Column(
           children: [
             CircleAvatar(
-              backgroundColor: Color.fromARGB(255, 209, 167, 41),
+              backgroundColor: const Color.fromARGB(255, 209, 167, 41),
               radius: 35,
               child: Image.asset(
                 url,

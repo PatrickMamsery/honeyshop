@@ -11,10 +11,10 @@ class HomeController extends GetxController {
   RxList<Project> projects = <Project>[].obs;
   @override
   void onInit() {
-    var _homeRepo = HomeRepository();
-    var _projectRepo = ProjectsRepository();
+    var homeRepo = HomeRepository();
+    var projectRepo = ProjectsRepository();
 
-    _homeRepo.getAllCategories(
+    homeRepo.getAllCategories(
         beforeSend: () {},
         onSuccess: (res) {
           print("step 1");
@@ -23,7 +23,7 @@ class HomeController extends GetxController {
         },
         onError: (error) {}); // var data = CategoriesResponse.fromJson(res);
     // print(data.data![0].description);
-    _projectRepo.getAllProjects(
+    projectRepo.getAllProjects(
         beforeSend: () {},
         onSuccess: (res) {
           projects.addAll(res.data!);

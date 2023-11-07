@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class profile extends StatelessWidget {
   final String title;
   final String subtitle;
-  profile({super.key, required this.title, required this.subtitle});
+  const profile({super.key, required this.title, required this.subtitle});
 
   @override
   Widget build(BuildContext context) {
@@ -12,12 +12,12 @@ class profile extends StatelessWidget {
       children: [
         Text(
           title,
-          style: TextStyle(color: Colors.grey),
+          style: const TextStyle(color: Colors.grey),
         ),
         SizedBox(
           child: Flexible(
             child: TextFormField(
-              style: TextStyle(fontWeight: FontWeight.bold),
+              style: const TextStyle(fontWeight: FontWeight.bold),
               initialValue: subtitle,
               cursorColor: Colors.amber,
               decoration: const InputDecoration(

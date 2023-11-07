@@ -10,9 +10,9 @@ class BottomNavigationController extends GetxController {
 
   final List<Widget> pages = [
     HomePage(),
-    AccountPage(),
-    CartPage(),
-    PrivacyPage(),
+    const AccountPage(),
+    const CartPage(),
+    const PrivacyPage(),
   ];
 
   void changePage(int index) {

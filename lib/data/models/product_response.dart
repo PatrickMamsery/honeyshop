@@ -7,17 +7,17 @@ class ProductResponse {
 
   ProductResponse.fromJson(Map<String, dynamic> json) {
     success = json['success'];
-    data = json['data'] != null ? new Product.fromJson(json['data']) : null;
+    data = json['data'] != null ? Product.fromJson(json['data']) : null;
     message = json['message'];
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['success'] = this.success;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['success'] = success;
     if (this.data != null) {
       data['data'] = this.data!.toJson();
     }
-    data['message'] = this.message;
+    data['message'] = message;
     return data;
   }
 }
@@ -51,14 +51,14 @@ class Product {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['id'] = this.id;
-    data['title'] = this.title;
-    data['description'] = this.description;
-    data['weight'] = this.weight;
-    data['local bee keeper'] = this.localBeeKeeper;
-    data['price'] = this.price;
-    data['organic'] = this.organic;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['id'] = id;
+    data['title'] = title;
+    data['description'] = description;
+    data['weight'] = weight;
+    data['local bee keeper'] = localBeeKeeper;
+    data['price'] = price;
+    data['organic'] = organic;
     return data;
   }
 }

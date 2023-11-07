@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class Description2 extends StatelessWidget {
   final String title;
   final String subtitle;
-  Description2({
+  const Description2({
     super.key,
     required this.sizedBox,
     required this.title,
@@ -22,13 +22,13 @@ class Description2 extends StatelessWidget {
           children: [
             Text(
               title,
-              style: TextStyle(fontWeight: FontWeight.bold),
+              style: const TextStyle(fontWeight: FontWeight.bold),
             ),
             sizedBox,
             Row(
               children: [
-                Padding(
-                  padding: const EdgeInsets.only(right: 8.0),
+                const Padding(
+                  padding: EdgeInsets.only(right: 8.0),
                   child: CircleAvatar(
                     radius: 10,
                     backgroundColor: Color.fromARGB(230, 231, 176, 11),
@@ -41,7 +41,7 @@ class Description2 extends StatelessWidget {
                 ),
                 Text(
                   subtitle,
-                  style: TextStyle(color: Colors.grey),
+                  style: const TextStyle(color: Colors.grey),
                 ),
               ],
             )

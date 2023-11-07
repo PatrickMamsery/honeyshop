@@ -4,7 +4,7 @@ class Item extends StatelessWidget {
   final String url;
   final String title;
   final String price;
-  Item({
+  const Item({
     super.key,
     required this.url,
     required this.title,
@@ -18,7 +18,7 @@ class Item extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20.0),
-            color: Color.fromARGB(26, 158, 158, 158)),
+            color: const Color.fromARGB(26, 158, 158, 158)),
         child: Padding(
           padding: const EdgeInsets.all(15.0),
           child: Row(
@@ -37,29 +37,29 @@ class Item extends StatelessWidget {
                 children: [
                   Text(
                     title,
-                    style: TextStyle(fontWeight: FontWeight.bold),
+                    style: const TextStyle(fontWeight: FontWeight.bold),
                   ),
                   Text(price)
                 ],
               ),
-              Column(
+              const Column(
                 // crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
-                    padding: const EdgeInsets.only(bottom: 8.0),
+                    padding: EdgeInsets.only(bottom: 8.0),
                     child: Icon(Icons.minimize),
                   ),
                   Text("/"),
                   Padding(
-                    padding: const EdgeInsets.only(top: 8.0),
+                    padding: EdgeInsets.only(top: 8.0),
                     child: CircleAvatar(
                       backgroundColor: Color.fromARGB(255, 209, 167, 41),
+                      radius: 10,
                       child: Icon(
                         Icons.add,
                         size: 15,
                         color: Colors.black,
                       ),
-                      radius: 10,
                     ),
                   )
                 ],

@@ -8,7 +8,7 @@ class ApiClient {
     }));
   }
 
-  String baseUrl = "http://localhost:8000/api";
+  String baseUrl = "http://10.0.2.2:8000/api";
   void get(
       {required Function() beforeSend,
       required Function(dynamic data) onSuccess,
@@ -38,7 +38,7 @@ class ApiClient {
       print(res);
       onSuccess(res.data);
     } catch (e) {
-      print("DIO_POST_ERROR:_" + e.toString());
+      print("DIO_POST_ERROR:_$e");
     }
   }
 }

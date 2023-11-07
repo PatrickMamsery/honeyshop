@@ -5,6 +5,8 @@ import 'package:get/get.dart';
 class BottomBar extends StatelessWidget {
   final controller = Get.put(BottomNavigationController());
 
+  BottomBar({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Obx(() => BottomNavigationBar(
